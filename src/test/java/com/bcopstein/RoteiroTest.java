@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import com.bcopstein.entidades.Bairro;
 import com.bcopstein.entidades.Roteiro;
-import com.bcopstein.entidades.geometria.Area;
 import com.bcopstein.entidades.geometria.Ponto;
 import com.bcopstein.entidades.geometria.Reta;
 

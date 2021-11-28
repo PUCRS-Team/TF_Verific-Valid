@@ -1,5 +1,7 @@
 package com.bcopstein.casosdeuso.politicas;
 
+import java.util.Objects;
+
 import com.bcopstein.entidades.Bairro;
 import com.bcopstein.entidades.Passageiro;
 import com.bcopstein.entidades.Roteiro;
@@ -30,7 +32,7 @@ public class CalculoCustoViagemBasico implements ICalculoCustoViagem {
     public double calculoCustoBasico() {
         return roteiro.bairrosPercoridos()
                .stream()
-               .filter(x -> x != null)
+               .filter(Objects::nonNull)
                .mapToDouble(Bairro::getCustoTransporte)
                .sum();
     }

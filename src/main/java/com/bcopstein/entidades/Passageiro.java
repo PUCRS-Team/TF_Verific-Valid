@@ -55,9 +55,4 @@ public class Passageiro{
 		return "Passageiro [cpf=" + cpf + ", nome=" + nome + ", pontuacaoAcumulada=" + pontuacaoAcumulada
 				+ ", qtdadeAvaliacoes=" + qtdadeAvaliacoes + "]";
 	}
-
-	@Override
-	public int hashCode(){
-		return cpf.hashCode();
-	}
 }

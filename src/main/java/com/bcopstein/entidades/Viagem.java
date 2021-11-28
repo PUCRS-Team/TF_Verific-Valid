@@ -42,8 +42,4 @@ public class Viagem{
         return "Viagem [valor cobrado=" + valorCobrado + ", dataHora=" + dataHora + ", id=" + id + 
                 ", passageiro=" + passageiro + ", roteiro=" + roteiro + "]";
     }
-    @Override
-    public int hashCode(){
-        return id + dataHora.hashCode();
-    }
 }
