@@ -1,4 +1,4 @@
-package com.bcopstein.casosDeUso.Politicas;
+package com.bcopstein.casosdeuso.politicas;
 
 public class CalculoCustoViagemVerao extends CalculoCustoViagemBasico {
     @Override

@@ -31,4 +31,9 @@ public class Ponto {
             return false;
         }
     }
+
+    @Override
+    public int hashCode(){
+        return y+x;
+    }
 }

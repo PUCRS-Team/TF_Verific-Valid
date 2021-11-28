@@ -1,11 +1,11 @@
-package com.bcopstein.interfaces.Persistencia;
+package com.bcopstein.interfaces.persistencia;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.bcopstein.casosDeUso.Repositorios.IRepositorioPassageiros;
+import com.bcopstein.casosdeuso.repositorios.IRepositorioPassageiros;
 import com.bcopstein.entidades.Passageiro;
 
 public class RepositorioPassageirosImplMem implements IRepositorioPassageiros {

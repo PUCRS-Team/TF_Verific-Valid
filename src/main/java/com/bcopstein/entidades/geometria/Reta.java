@@ -18,8 +18,8 @@ public class Reta {
 
     public double tamanho() {
         return Math.sqrt(
-            Math.pow(p2.getX()-p1.getX(),2) +
-            Math.pow(p2.getY()-p1.getY(),2));
+            Math.pow(p2.getX()-p1.getX() * 1.0, 2) +
+            Math.pow(p2.getY()-p1.getY() * 1.0, 2));
     }
 
     @Override
@@ -37,5 +37,9 @@ public class Reta {
         }else{
             return false;
         }
+    }
+    @Override 
+    public int hashCode(){
+        return p1.hashCode() + p2.hashCode();  
     }
 }

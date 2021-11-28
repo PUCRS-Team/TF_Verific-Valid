@@ -71,4 +71,9 @@ public class Bairro {
             return false;
         }
     }
-}
+
+    @Override
+    public int hashCode(){
+        return nome.hashCode();
+    }
+} 

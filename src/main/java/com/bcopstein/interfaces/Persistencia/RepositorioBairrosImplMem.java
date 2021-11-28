@@ -1,11 +1,11 @@
-package com.bcopstein.interfaces.Persistencia;
+package com.bcopstein.interfaces.persistencia;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.bcopstein.casosDeUso.Repositorios.IRepositorioBairros;
+import com.bcopstein.casosdeuso.repositorios.IRepositorioBairros;
 import com.bcopstein.entidades.Bairro;
 import com.bcopstein.entidades.geometria.Ponto;
 

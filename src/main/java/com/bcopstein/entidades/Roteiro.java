@@ -63,4 +63,8 @@ public class Roteiro {
             return false;
         }
     }
+    @Override
+    public int hashCode(){
+        return bairroDestino.hashCode() / 2 + bairroOrigem.hashCode() / 2 + rota.hashCode() / 2;
+    }
 }

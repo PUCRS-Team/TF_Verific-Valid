@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 
 public class RoteiroTest {
     private ArrayList<Bairro> bairros;
-    private Roteiro roteiro , aux;
+    private Roteiro aux;
 
     @BeforeEach
     public void setup(){

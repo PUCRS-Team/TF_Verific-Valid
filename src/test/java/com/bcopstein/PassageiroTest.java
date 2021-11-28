@@ -1,6 +1,5 @@
 package com.bcopstein;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.bcopstein.entidades.Passageiro;
 

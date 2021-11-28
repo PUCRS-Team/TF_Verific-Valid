@@ -73,4 +73,8 @@ public class Area {
             return false;
         }
     }
+    @Override
+    public int hashCode(){
+        return pInfDir.hashCode() + pSupEsq.hashCode();
+    }
 }

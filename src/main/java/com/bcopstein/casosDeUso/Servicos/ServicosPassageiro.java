@@ -1,14 +1,14 @@
-package com.bcopstein.casosDeUso.Servicos;
+package com.bcopstein.casosdeuso.servicos;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.bcopstein.casosDeUso.Politicas.CustoViagem;
-import com.bcopstein.casosDeUso.Politicas.ICalculoCustoViagem;
-import com.bcopstein.casosDeUso.Repositorios.IRepositorioBairros;
-import com.bcopstein.casosDeUso.Repositorios.IRepositorioPassageiros;
+import com.bcopstein.casosdeuso.repositorios.IRepositorioBairros;
+import com.bcopstein.casosdeuso.repositorios.IRepositorioPassageiros;
+import com.bcopstein.casosdeuso.politicas.CustoViagem;
+import com.bcopstein.casosdeuso.politicas.ICalculoCustoViagem;
 import com.bcopstein.entidades.Bairro;
 import com.bcopstein.entidades.Passageiro;
 import com.bcopstein.entidades.Roteiro;
