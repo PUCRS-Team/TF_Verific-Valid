@@ -1,5 +1,8 @@
 package com.bcopstein.casosdeuso.politicas;
 
+import java.io.Console;
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.Objects;
 
 import com.bcopstein.entidades.Bairro;
@@ -12,12 +15,18 @@ public class CalculoCustoViagemBasico implements ICalculoCustoViagem {
 
     @Override
     public void defineRoteiro(Roteiro roteiro) {
-        this.roteiro = roteiro;
+        if(roteiro != null)
+            this.roteiro = roteiro;
+        else 
+            System.out.print("roteiro inválido");
     }
 
     @Override
     public void definePassageiro(Passageiro passageiro){
-        this.passageiro = passageiro;
+        if(passageiro != null)
+            this.passageiro = passageiro;
+        else 
+            System.out.print("passageiro inválido");
     }
 
 	public Roteiro getRoteiro() {
@@ -30,11 +39,15 @@ public class CalculoCustoViagemBasico implements ICalculoCustoViagem {
     
     @Override
     public double calculoCustoBasico() {
-        return roteiro.bairrosPercoridos()
-               .stream()
-               .filter(Objects::nonNull)
-               .mapToDouble(Bairro::getCustoTransporte)
-               .sum();
+        assert roteiro != null : "roteiro inválido";
+        Collection<Bairro> bairros = roteiro.bairrosPercoridos();
+        bairros = bairros != null ? bairros : new LinkedList<>(); 
+
+        return bairros
+        .stream()
+        .filter(Objects::nonNull)
+        .mapToDouble(Bairro::getCustoTransporte)
+        .sum();
     }
 
     @Override

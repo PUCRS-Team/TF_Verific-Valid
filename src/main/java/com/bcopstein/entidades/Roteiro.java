@@ -45,6 +45,7 @@ public class Roteiro {
     }
 
     public Collection<Bairro> bairrosPercoridos(){
+        assert bairrosPercorridos != null : "bairros percorriods inválidos";
         return bairrosPercorridos;
     }
     

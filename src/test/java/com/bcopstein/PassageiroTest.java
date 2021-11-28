@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class PassageiroTest {
     
     @Test
-    public void  novoPassageiroTest(){
+     void  novoPassageiroTest(){
         Passageiro passageiro = Passageiro.novoPassageiro("01784522034", "Mario Quintana"); //cria o objeto passageiro.
         assertEquals("Mario Quintana", passageiro.getNome());  //teste do nome.
         assertEquals("01784522034", passageiro.getCPF()); // teste do cpf.
@@ -18,7 +18,7 @@ public class PassageiroTest {
     }
 
     @Test
-    public void  passageiroExistenteTest(){
+     void  passageiroExistenteTest(){
         Passageiro passageiro = Passageiro.passageiroExistente("01781232034", "Francisco da Silva",20,10); //cria o objeto passageiro.
         assertEquals("Francisco da Silva", passageiro.getNome());  //teste do nome.
         assertEquals("01781232034", passageiro.getCPF()); // teste do cpf.
@@ -28,7 +28,7 @@ public class PassageiroTest {
     }
 
     @Test
-    public void infoPontuacaoTest(){
+     void infoPontuacaoTest(){
         Passageiro passageiro = Passageiro.novoPassageiro("17834233412","João Pedro");
         passageiro.infoPontuacao(30);
         assertEquals(38, passageiro.getPontuacaoAcumulada());
@@ -36,7 +36,7 @@ public class PassageiroTest {
     }
 
     @Test
-    public void toStringTest() {
+     void toStringTest() {
         Passageiro passageiro = Passageiro.passageiroExistente("01784522031", "Silvio", 40, 17);
 
         String expected = "Passageiro [cpf=" + "01784522031" + ", nome=" + "Silvio" + ", pontuacaoAcumulada=" + 40

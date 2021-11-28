@@ -25,7 +25,7 @@ public class AreaTest {
     }
 
     @Test
-    public void testar_construtor_ponto() {
+    void testar_construtor_ponto() {
         int X = 35; 
         int Y = 30;
         Ponto testa_ponto_Central = areaAux.pontoCentral();
@@ -34,7 +34,7 @@ public class AreaTest {
     }
 
     @Test
-    public void testar_construtor_area() {
+     void testar_construtor_area() {
         assertEquals(10, pontoSupEsq.getX());
         assertEquals(50, pontoSupEsq.getY());
 		
@@ -43,32 +43,32 @@ public class AreaTest {
     }
 
     @Test
-    public void testar_Ponto_AcimaDireita() {
+     void testar_Ponto_AcimaDireita() {
         Ponto ponto = new Ponto(80, 80);
         assertEquals(5, areaAux.codificaPonto(ponto));
     }
 
     @Test
-    public void testar_Ponto_AcimaEsquerda() {
+     void testar_Ponto_AcimaEsquerda() {
         Ponto ponto = new Ponto(0, 60);
         assertEquals(9, areaAux.codificaPonto(ponto));
     }
 
     @Test
-    public void testar_Ponto_AbaixoDireita() {
+     void testar_Ponto_AbaixoDireita() {
         Ponto ponto = new Ponto(80, 5);
         assertEquals(6, areaAux.codificaPonto(ponto));
     }
 
     @Test
-    public void testar_Ponto_AbaixoEsquerda() {
+     void testar_Ponto_AbaixoEsquerda() {
         Ponto ponto = new Ponto(0, 5);
         assertEquals(10, areaAux.codificaPonto(ponto));
     }
 
     @ParameterizedTest
     @CsvSource({"15, 40, 35, 40, TODA_DENTRO", "15,  5, 35,  5, TODA_FORA"})
-    public void retornarAlgumStatus(int x1, int y1, int x2, int y2, String status) {
+     void retornarAlgumStatus(int x1, int y1, int x2, int y2, String status) {
 
         areaAux = new Area(new Ponto(10,50), new Ponto(60,10));
         Reta reta = new Reta(new Ponto(x1,y1), new Ponto(x2, y2));

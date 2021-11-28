@@ -20,7 +20,7 @@ public class ViagemTest {
 
 
     @BeforeEach
-    public void setup(){
+     void setup(){
         bairros = new ArrayList<Bairro>();
         bairros.add(Bairro.novoBairroRetangular("Centro", new Ponto(20,60), 30, 20, 7));
         bairros.add(Bairro.novoBairroRetangular("Centro Historico", new Ponto(10,20), 30, 20, 2));
@@ -34,7 +34,7 @@ public class ViagemTest {
         }
 
         @Test
-        public void viagemTest(){
+         void viagemTest(){
             assertEquals(time, viagem.getDataHora());
             assertEquals(3, viagem.getId());
             assertEquals(roteiro, viagem.getRoteiro());

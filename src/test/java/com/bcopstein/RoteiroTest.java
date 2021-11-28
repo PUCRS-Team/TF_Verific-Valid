@@ -16,7 +16,7 @@ public class RoteiroTest {
     private Roteiro aux;
 
     @BeforeEach
-    public void setup(){
+     void setup(){
         bairros = new ArrayList<>();
         bairros.add(Bairro.novoBairroRetangular("Centro", new Ponto(20,60), 30, 20, 7));
         bairros.add(Bairro.novoBairroRetangular("Centro Historico", new Ponto(10,20), 30, 20, 2));
@@ -26,14 +26,14 @@ public class RoteiroTest {
     }
 
     @Test
-    public void roteiro_Test() {
+     void roteiro_Test() {
         aux = new Roteiro(bairros.get(0), bairros.get(3), bairros);
         Reta roteiro = new Reta ( new Ponto (35,50), new Ponto (85,25));
         assertEquals(roteiro, aux.getRota());
     }
 
    @Test
-    public void testaRotaPercorrida(){
+     void testaRotaPercorrida(){
         Roteiro Test_bairros = new Roteiro(bairros.get(0), bairros.get(2), bairros);
         Collection<Bairro> bairrosPercoBairros = new ArrayList<>();
         bairrosPercoBairros.add(bairros.get(0));
