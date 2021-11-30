@@ -22,7 +22,8 @@ public class CalculoCustoViagemRelampago extends CalculoCustoViagemBasico {
     public double descontoPromocaoSazonal() {
         Roteiro roteiro =  getRoteiro();
         assert roteiro != null : "roteiro inválido";
-        int qtdadeBairros = getRoteiro().bairrosPercoridos().size();
+
+        int qtdadeBairros = roteiro.bairrosPercoridos().size();
 
         double cb = calculoCustoBasico();
         if (qtdadeBairros > 3){

@@ -18,15 +18,15 @@ public class CalculoCustoViagemBasico implements ICalculoCustoViagem {
         if(roteiro != null)
             this.roteiro = roteiro;
         else 
-            System.out.print("roteiro inválido");
+            System.err.print("roteiro inválido");
     }
 
-    @Override
+    @Override 
     public void definePassageiro(Passageiro passageiro){
         if(passageiro != null)
             this.passageiro = passageiro;
         else 
-            System.out.print("passageiro inválido");
+            System.err.print("passageiro inválido");
     }
 
 	public Roteiro getRoteiro() {

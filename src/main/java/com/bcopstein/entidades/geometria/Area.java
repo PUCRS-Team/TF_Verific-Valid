@@ -24,14 +24,14 @@ public class Area {
     public Ponto pontoCentral(){
         int x = getPSupEsq().getX()+(Math.abs(getPInfDir().getX() - getPSupEsq().getX())/2);
         int y = getPInfDir().getY()+(Math.abs(getPInfDir().getY() - getPSupEsq().getY())/2);
-        return new Ponto(x,y);
+        return new Ponto(x, y);
     }
 
     public byte codificaPonto(Ponto p) {
         byte cod = 0;
-        if (p.getY() > getPSupEsq().getY()) { // Ponto acima da area
+        if (p.getY() > this.pSupEsq.getY()) { // Ponto acima da area
             cod = (byte) 1;
-        } else if (p.getY() < getPInfDir().getY()) { // Ponto abaixo da area
+        } else if (p.getY() < this.pInfDir.getY()) { // Ponto abaixo da area
             cod = (byte) 2;
         }
 
