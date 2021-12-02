@@ -15,6 +15,7 @@ public class Roteiro {
 
     private void determinaBairrosPercorridos(Reta rota,Collection<Bairro> todosBairros){
         for(Bairro bairro:todosBairros){
+            assert bairrosPercorridos != null : "bairro percorrido inválido";
             SituacaoReta sr = bairro.getClassificacao(rota);
             if (sr != SituacaoReta.TODA_FORA){
                 bairrosPercorridos.add(bairro);
@@ -45,7 +46,7 @@ public class Roteiro {
     }
 
     public Collection<Bairro> bairrosPercoridos(){
-        assert bairrosPercorridos != null : "bairros percorriods inválidos";
+        assert bairrosPercorridos != null : "bairros percorridos inválidos";
         return bairrosPercorridos;
     }
     

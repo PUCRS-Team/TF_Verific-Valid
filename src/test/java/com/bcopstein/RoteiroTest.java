@@ -33,7 +33,7 @@ public class RoteiroTest {
     }
 
    @Test
-     void testaRotaPercorrida(){
+     void teste_bairro_percorrido(){
         Roteiro Test_bairros = new Roteiro(bairros.get(0), bairros.get(2), bairros);
         Collection<Bairro> bairrosPercoBairros = new ArrayList<>();
         bairrosPercoBairros.add(bairros.get(0));

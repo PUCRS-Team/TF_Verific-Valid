@@ -9,13 +9,10 @@ import com.bcopstein.entidades.geometria.Reta;
 import com.bcopstein.entidades.geometria.SituacaoReta;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import net.jqwik.api.Arbitraries;
-import static org.mockito.Mockito.*;
 
 ///#endregion
 public class AreaTest {
@@ -24,20 +21,30 @@ public class AreaTest {
     private Ponto pontoInfDir;
     private Ponto pontoCentral;
 	private Area areaAux;
-    
-    @Test
-    void testar_construtor_ponto_central() {
-        setup(Integer.MIN_VALUE, Integer.MAX_VALUE, -1, 0);
-        
-        Ponto testa_ponto_Central = areaAux.pontoCentral();
-        
-        assertEquals(pontoCentral.getX(), testa_ponto_Central.getX());
-        assertEquals(pontoCentral.getY(), testa_ponto_Central.getY());
+
+    @BeforeEach
+    void setup() {
+        pontoSupEsq = new Ponto(10, 50);
+        pontoInfDir = new Ponto(60, 10);
+        areaAux = new Area(pontoSupEsq, pontoInfDir);
     }
 
-    @RepeatedTest(value = 100)
+    @Test
+    void testar_construtor_ponto_central() {
+        int X = 35; 
+        int Y = 30;
+
+        Ponto testa_ponto_Central = areaAux.pontoCentral();
+
+        assertEquals(X, testa_ponto_Central.getX());
+        assertEquals(Y, testa_ponto_Central.getY());
+    }
+
+    @Test
      void contrutor_joga_excecao() {
-        assertThrows(IllegalArgumentException.class, () -> setup(-100, 100, -1, 0));
+         Ponto p1 = new Ponto(10, 50);
+         Ponto p2 = new Ponto(9, 51);
+        assertThrows(IllegalArgumentException.class, () -> new Area(p1, p2));
     }
 
     @Test
@@ -78,30 +85,5 @@ public class AreaTest {
             default -> SituacaoReta.TODA_DENTRO;
         };
         assertEquals(statusReta, areaAux.classifica(reta));
-    }
-
-    private void setup(int min, int max, int limitInferior, int limitSuperior) {
-        pontoSupEsq = mock(Ponto.class);
-        pontoInfDir = mock(Ponto.class);
-
-        when(pontoSupEsq.getX()).thenReturn(getIntRandom(min, limitInferior));
-        when(pontoSupEsq.getY()).thenReturn(getIntRandom(limitSuperior, max));
-
-        when(pontoInfDir.getX()).thenReturn(getIntRandom(limitSuperior, max));
-        when(pontoInfDir.getY()).thenReturn(getIntRandom(min, limitInferior));
-
-        pontoCentral = calculaPontoCentral();
-        areaAux = new Area(pontoSupEsq, pontoInfDir);
-    }
-    
-    private int getIntRandom(int min, int max){
-        return Arbitraries.integers().between(min, max).sample();
-    }
-    
-    private Ponto calculaPontoCentral(){
-        int x = pontoSupEsq.getX() + (Math.abs(pontoInfDir.getX() - pontoSupEsq.getX()) / 2);
-        int y = pontoInfDir.getY() + (Math.abs(pontoInfDir.getY() - pontoSupEsq.getY()) / 2);
-
-        return  new Ponto(x, y);
-    }
+     }
 }
